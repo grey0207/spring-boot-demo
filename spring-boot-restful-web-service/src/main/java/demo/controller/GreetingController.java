@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class GreetingController {
     // default
-    @RequestMapping("/hello")
+    @GetMapping("/hello")
     public Greeting hello() {
         return new Greeting(1, "John");
     }
     // get params
-    @RequestMapping("/hello2")
+    @GetMapping("/hello2")
     public Greeting hello2(@RequestParam(value="id", defaultValue="1") int id) {
         return new Greeting(id, "John");
     }
     // get restful
-    @RequestMapping("/hello3/{id}")
+    @GetMapping("/hello3/{id}")
     public Greeting hello3(@PathVariable int id) {
         return new Greeting(id, "John");
     }
